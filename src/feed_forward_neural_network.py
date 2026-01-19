@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn 
 
 class FeedForwardNeuralNetwork(nn.Module):
+    
     def __init__(self, d_model : int, d_ff : int, dropout : float):
         super().__init__()
         self.dropout = nn.Dropout(dropout)

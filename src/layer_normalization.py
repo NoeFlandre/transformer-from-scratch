@@ -11,5 +11,5 @@ class LayerNormalization(nn.Module):
     def forward(self, x : torch.Tensor) -> torch.Tensor:
         # as a reminder x has dimension (batch_size, seq_length, d_model)
         mean = x.mean(dim=-1, keepdim=True) # we compute the mean but keep the dimension
-        std = x.std(dim=-1, keepdim=True, unbiased=False) # by default the Bessel's correction s applied to the std for statistical estimation which is not the case for layer norm
+        std = x.std(dim=-1, keepdim=True, unbiased=False) # by default the Bessel's correction is applied to the std for statistical estimation which is not the case for layer norm
         return self.alpha * (x-mean)/(std + self.eps) + self.beta
