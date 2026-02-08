@@ -3,7 +3,7 @@ import torch.nn as nn
 import math
 
 
-class PositionalEmbedding(nn.Module):
+class PositionalEncoding(nn.Module):
     def __init__(self, d_model: int, seq_length: int, dropout: float):
         super().__init__()
         self.dropout = nn.Dropout(dropout)
